@@ -33,5 +33,5 @@ yarn-error.log*
 next-env.d.ts
 
 # screenshots (will be generated)
-/public/portfolio/*.webp
+# /public/portfolio/*.webp  # Commented out to allow committing images
 
