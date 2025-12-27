@@ -14,13 +14,19 @@ MAPPING = {
     'truglow-temp.png': 'truglow-phone-offers-desktop.webp',
 }
 
-def convert_image(input_path, output_path, max_size=(1920, 1080), quality=85):
+def convert_image(input_path, output_path, max_size=(3840, 2160), quality=95):
     try:
         img = Image.open(input_path)
+        original_size = img.size
+        print(f"  Original: {original_size[0]}x{original_size[1]}")
+        
+        # Only resize if larger than max_size (preserve original if smaller)
         if img.size[0] > max_size[0] or img.size[1] > max_size[1]:
             img.thumbnail(max_size, Image.Resampling.LANCZOS)
-        img.save(output_path, 'WEBP', quality=quality, optimize=True)
-        print(f"✓ Converted: {output_path.name}")
+            print(f"  Resized to: {img.size[0]}x{img.size[1]}")
+        
+        img.save(output_path, 'WEBP', quality=quality, method=6, optimize=True)
+        print(f"✓ Converted: {output_path.name} ({img.size[0]}x{img.size[1]}, quality={quality})")
         return True
     except Exception as e:
         print(f"✗ Error: {e}")

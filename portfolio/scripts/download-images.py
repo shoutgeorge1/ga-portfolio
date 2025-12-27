@@ -17,8 +17,8 @@ IMAGES = {
     'https://i.postimg.cc/vcyZY8Hm/Top-Rated-Dentist-in-Beverly-Hills-Tru-GLO-Modern-Dental-Same-Day-Appointments-12-27-2025-08-55-AM.png': 'truglow-phone-offers-desktop.webp',
 }
 
-def download_and_convert(url, output_path, max_size=(1920, 1080), quality=85):
-    """Download image and convert to WebP"""
+def download_and_convert(url, output_path, max_size=(3840, 2160), quality=95):
+    """Download image and convert to WebP at high quality"""
     try:
         print(f"Downloading {url}...")
         response = requests.get(url, timeout=30)
@@ -26,15 +26,18 @@ def download_and_convert(url, output_path, max_size=(1920, 1080), quality=85):
         
         # Open image
         img = Image.open(io.BytesIO(response.content))
+        original_size = img.size
+        print(f"  Original size: {original_size[0]}x{original_size[1]}")
         
-        # Resize if needed
+        # Only resize if image is larger than max_size (preserve original if smaller)
         if img.size[0] > max_size[0] or img.size[1] > max_size[1]:
             img.thumbnail(max_size, Image.Resampling.LANCZOS)
+            print(f"  Resized to: {img.size[0]}x{img.size[1]}")
         
-        # Convert to WebP
+        # Convert to WebP with high quality
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        img.save(output_path, 'WEBP', quality=quality, optimize=True)
-        print(f"✓ Saved: {output_path.name} ({img.size[0]}x{img.size[1]})")
+        img.save(output_path, 'WEBP', quality=quality, method=6, optimize=True)
+        print(f"✓ Saved: {output_path.name} ({img.size[0]}x{img.size[1]}, quality={quality})")
         return True
     except Exception as e:
         print(f"✗ Error processing {url}: {e}")

@@ -12,8 +12,8 @@ const projectsToCapture = (isDev ? portfolio.slice(0, 2) : portfolio).filter(
 
 const OUTPUT_DIR = path.join(process.cwd(), 'public', 'portfolio');
 
-// Device viewports
-const DESKTOP_VIEWPORT = { width: 1920, height: 1080 };
+// Device viewports - using higher resolution for sharp images
+const DESKTOP_VIEWPORT = { width: 2560, height: 1440 };
 const MOBILE_VIEWPORT = { width: 375, height: 812 };
 
 async function ensureDir(dir: string) {
@@ -45,12 +45,12 @@ async function captureScreenshot(
     
     const screenshot = await page.screenshot({
       type: 'png',
-      fullPage: true,
+      fullPage: false, // Capture viewport only for consistent sizing
     });
     
-    // Convert to WebP with optimization
+    // Convert to WebP with high quality for sharp images
     await sharp(screenshot)
-      .webp({ quality: 85, effort: 6 })
+      .webp({ quality: 95, effort: 6 })
       .toFile(outputPath);
     
     console.log(`  ✓ Saved: ${path.basename(outputPath)}`);
