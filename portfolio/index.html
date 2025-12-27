@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Aguilar - Portfolio</title>
+    <meta name="description" content="Landing pages, audits, and marketing technology projects.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+        .project-card {
+            transition: box-shadow 0.2s ease;
+        }
+        .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .image-container {
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            background: #f5f5f5;
+            position: relative;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        .placeholder-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .placeholder-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .code-placeholder {
+            background: #1e1e1e;
+            color: #858585;
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            font-size: 8px;
+            line-height: 1.3;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            letter-spacing: -0.1px;
+            position: relative;
+            height: 100%;
+        }
+        .code-header {
+            background: #252526;
+            padding: 4px 8px;
+            border-bottom: 1px solid #3e3e42;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 7px;
+        }
+        .code-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .code-dot-red { background: #ff5f56; }
+        .code-dot-yellow { background: #ffbd2e; }
+        .code-dot-green { background: #27c93f; }
+        .code-filename {
+            color: #858585;
+            margin-left: auto;
+        }
+        .code-linenums {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        .code-linenum-col {
+            background: #252526;
+            color: #858585;
+            padding: 4px 6px;
+            border-right: 1px solid #3e3e42;
+            text-align: right;
+            font-size: 7px;
+            line-height: 1.3;
+            min-width: 20px;
+        }
+        .code-content {
+            flex: 1;
+            padding: 4px 8px;
+            text-align: left;
+            width: 100%;
+            overflow-y: auto;
+            opacity: 0.9;
+        }
+        .code-content::-webkit-scrollbar {
+            width: 4px;
+        }
+        .code-content::-webkit-scrollbar-track {
+            background: #252526;
+        }
+        .code-content::-webkit-scrollbar-thumb {
+            background: #424242;
+            border-radius: 2px;
+        }
+        .code-keyword { color: #569cd6; }
+        .code-string { color: #ce9178; }
+        .code-comment { color: #6a9955; }
+        .code-function { color: #dcdcaa; }
+        .code-number { color: #b5cea8; }
+        .code-var { color: #9cdcfe; }
+        .code-operator { color: #d4d4d4; }
+    </style>
+</head>
+<body>
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <!-- Header -->
+        <div class="mb-12">
+            <h1 class="text-2xl font-semibold text-gray-900 mb-1">George Aguilar</h1>
+            <p class="text-sm text-gray-600">Landing pages, audits, and marketing technology</p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Project 1: City Direct Mail -->
+            <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="space-y-1">
+                    <div class="image-container">
+                        <img src="public/portfolio/city-direct-mail-el-cerrito-desktop.webp" alt="City Direct Mail" onerror="this.parentElement.innerHTML='<div class=\'placeholder-primary w-full h-full flex items-center justify-center\'><span>LANDING PAGE</span></div>'">
+                    </div>
+                    <div class="image-container code-placeholder">
+                        <div class="code-header">
+                            <span class="code-dot code-dot-red"></span>
+                            <span class="code-dot code-dot-yellow"></span>
+                            <span class="code-dot code-dot-green"></span>
+                            <span class="code-filename">compliance.py</span>
+                        </div>
+                        <div class="code-linenums">
+                            <div class="code-linenum-col">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment"># El Cerrito compliance requirements</span><br>
+                                <span class="code-keyword">import</span> json, requests<br>
+                                <span class="code-keyword">from</span> datetime <span class="code-keyword">import</span> datetime<br>
+                                <span class="code-keyword">from</span> typing <span class="code-keyword">import</span> Dict, List<br><br>
+                                <span class="code-keyword">def</span> <span class="code-function">check_compliance</span>(property: Dict) -> bool:<br>
+                                &nbsp;&nbsp;<span class="code-keyword">if</span> property.type == <span class="code-string">'direct_mail'</span>:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;zone = <span class="code-function">get_zone</span>(property.address)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;requirements = <span class="code-function">fetch_requirements</span>(zone)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;validated = <span class="code-function">validate_requirements</span>(<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property.address,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property.zone,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requirements<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> validated<br>
+                                &nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-keyword">False</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-1.5">City Direct Mail Requirements</h3>
+                    <p class="text-xs text-gray-600 mb-3 leading-relaxed">Permit requirements page for El Cerrito city direct mail compliance.</p>
+                    <a href="https://requirements-for-city-direct-mail-c-eight.vercel.app/el-cerrito.html" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-500 hover:text-gray-900 underline">
+                        View Live
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2: Dr. Dhir -->
+            <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="space-y-1">
+                    <div class="image-container">
+                        <img src="public/portfolio/dr-dhir-rhyno-desktop.webp" alt="Dr. Dhir Rhyno Clinic" onerror="this.parentElement.innerHTML='<div class=\'placeholder-primary w-full h-full flex items-center justify-center\'><span>LANDING PAGE</span></div>'">
+                    </div>
+                    <div class="image-container code-placeholder">
+                        <div class="code-header">
+                            <span class="code-dot code-dot-red"></span>
+                            <span class="code-dot code-dot-yellow"></span>
+                            <span class="code-dot code-dot-green"></span>
+                            <span class="code-filename">tracking.js</span>
+                        </div>
+                        <div class="code-linenums">
+                            <div class="code-linenum-col">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment">// GTM: Consultation form tracking</span><br>
+                                <span class="code-keyword">const</span> <span class="code-var">trackFormSubmit</span> = <span class="code-keyword">function</span>(e) {<br>
+                                &nbsp;&nbsp;e.preventDefault();<br>
+                                &nbsp;&nbsp;<span class="code-keyword">const</span> <span class="code-var">formData</span> = {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;event: <span class="code-string">'consultation_request'</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;source: <span class="code-string">'landing_page'</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;timestamp: <span class="code-function">Date</span>.<span class="code-function">now</span>(),<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;form_id: e.target.id,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;page_url: <span class="code-function">window</span>.<span class="code-function">location</span>.<span class="code-function">href</span><br>
+                                &nbsp;&nbsp;};<br>
+                                &nbsp;&nbsp;<span class="code-function">dataLayer</span>.<span class="code-function">push</span>(formData);<br>
+                                &nbsp;&nbsp;<span class="code-function">gtag</span>(<span class="code-string">'event'</span>, <span class="code-string">'form_submit'</span>, formData);<br>
+                                &nbsp;&nbsp;<span class="code-function">console</span>.<span class="code-function">log</span>(<span class="code-string">'Form tracked'</span>, formData);<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-1.5">Dr. Dhir – Rhyno Clinic</h3>
+                    <p class="text-xs text-gray-600 mb-3 leading-relaxed">Medical practice landing page with consultation request form.</p>
+                    <a href="https://dr-dhir-rhyno-s7xu.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-500 hover:text-gray-900 underline">
+                        View Live
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3: SEO Audit -->
+            <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="space-y-1">
+                    <div class="image-container">
+                        <img src="public/portfolio/rnd-vs-katz-seo-audit-desktop.webp" alt="SEO Audit Report" onerror="this.parentElement.innerHTML='<div class=\'placeholder-primary w-full h-full flex items-center justify-center\'><span>AUDIT REPORT</span></div>'">
+                    </div>
+                    <div class="image-container code-placeholder">
+                        <div class="code-header">
+                            <span class="code-dot code-dot-red"></span>
+                            <span class="code-dot code-dot-yellow"></span>
+                            <span class="code-dot code-dot-green"></span>
+                            <span class="code-filename">audit.py</span>
+                        </div>
+                        <div class="code-linenums">
+                            <div class="code-linenum-col">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment"># SEO audit findings</span><br>
+                                <span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd<br>
+                                <span class="code-keyword">from</span> seo_tools <span class="code-keyword">import</span> analyze, crawl<br>
+                                <span class="code-keyword">from</span> datetime <span class="code-keyword">import</span> datetime<br><br>
+                                <span class="code-keyword">def</span> <span class="code-function">generate_report</span>(url: str) -> dict:<br>
+                                &nbsp;&nbsp;sitemap = <span class="code-function">crawl</span>.<span class="code-function">get_sitemap</span>(url)<br>
+                                &nbsp;&nbsp;issues = {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'meta_tags'</span>: <span class="code-number">12</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'canonical'</span>: <span class="code-number">3</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'sitemap'</span>: <span class="code-number">1</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'redirects'</span>: <span class="code-number">8</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'broken_links'</span>: <span class="code-number">5</span><br>
+                                &nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;priority = <span class="code-function">sort_by_impact</span>(issues)<br>
+                                &nbsp;&nbsp;report = <span class="code-function">format_report</span>(priority, sitemap)<br>
+                                &nbsp;&nbsp;<span class="code-keyword">return</span> report
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-1.5">SEO Audit – RND vs Katz</h3>
+                    <p class="text-xs text-gray-600 mb-3 leading-relaxed">Technical SEO audit report with prioritized action items.</p>
+                    <a href="https://rnd-vs-katz-35o4.vercel.app/SEO_AUDIT_REPORT.html" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-500 hover:text-gray-900 underline">
+                        View Live
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 4: Truglow -->
+            <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="space-y-1">
+                    <div class="image-container">
+                        <img src="public/portfolio/truglow-phone-offers-desktop.webp" alt="Truglow Phone Offers" onerror="this.parentElement.innerHTML='<div class=\'placeholder-primary w-full h-full flex items-center justify-center\'><span>LANDING PAGE</span></div>'">
+                    </div>
+                    <div class="image-container code-placeholder">
+                        <div class="code-header">
+                            <span class="code-dot code-dot-red"></span>
+                            <span class="code-dot code-dot-yellow"></span>
+                            <span class="code-dot code-dot-green"></span>
+                            <span class="code-filename">calltrack.js</span>
+                        </div>
+                        <div class="code-linenums">
+                            <div class="code-linenum-col">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment">// Call tracking integration</span><br>
+                                <span class="code-keyword">class</span> <span class="code-function">CallTracker</span> {<br>
+                                &nbsp;&nbsp;<span class="code-function">constructor</span>(apiKey, config = {}) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.apiKey = apiKey;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.config = config;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.events = [];<br>
+                                &nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;<span class="code-function">trackCall</span>(number, source) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">const</span> <span class="code-var">callEvent</span> = {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type: <span class="code-string">'phone_click'</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: number,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source: source,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timestamp: <span class="code-function">Date</span>.<span class="code-function">now</span>(),<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session_id: <span class="code-function">getSessionId</span>()<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;};<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.events.<span class="code-function">push</span>(callEvent);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">analytics</span>.<span class="code-function">track</span>(callEvent);<br>
+                                &nbsp;&nbsp;}<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-1.5">Truglow Phone Offers</h3>
+                    <p class="text-xs text-gray-600 mb-3 leading-relaxed">Dental promotion landing page with phone call tracking.</p>
+                    <a href="https://truglow-phone-lp-offers.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-500 hover:text-gray-900 underline">
+                        View Live
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 5: Balcony Permit -->
+            <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="space-y-1">
+                    <div class="image-container">
+                        <img src="public/portfolio/balcony-design-permit-desktop.webp" alt="Balcony Design Permit" onerror="this.parentElement.innerHTML='<div class=\'placeholder-primary w-full h-full flex items-center justify-center\'><span>LANDING PAGE</span></div>'">
+                    </div>
+                    <div class="image-container code-placeholder">
+                        <div class="code-header">
+                            <span class="code-dot code-dot-red"></span>
+                            <span class="code-dot code-dot-yellow"></span>
+                            <span class="code-dot code-dot-green"></span>
+                            <span class="code-filename">validate.js</span>
+                        </div>
+                        <div class="code-linenums">
+                            <div class="code-linenum-col">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment">/* Permit form validation */</span><br>
+                                <span class="code-keyword">const</span> <span class="code-var">validateForm</span> = () => {<br>
+                                &nbsp;&nbsp;<span class="code-keyword">const</span> <span class="code-var">required</span> = [<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'address'</span>, <span class="code-string">'property_type'</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'zip_code'</span>, <span class="code-string">'contact_email'</span><br>
+                                &nbsp;&nbsp;];<br>
+                                &nbsp;&nbsp;<span class="code-keyword">const</span> <span class="code-var">errors</span> = [];<br>
+                                &nbsp;&nbsp;<span class="code-keyword">const</span> <span class="code-var">form</span> = <span class="code-function">document</span>.<span class="code-function">getElementById</span>(<span class="code-string">'permit-form'</span>);<br>
+                                &nbsp;&nbsp;required.<span class="code-function">forEach</span>(field => {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">const</span> <span class="code-var">value</span> = <span class="code-function">getValue</span>(field);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (!value || value.trim() === <span class="code-string">''</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errors.<span class="code-function">push</span>(field);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;});<br>
+                                &nbsp;&nbsp;<span class="code-keyword">return</span> errors.length === <span class="code-number">0</span>;<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-1.5">Balcony Design Permit</h3>
+                    <p class="text-xs text-gray-600 mb-3 leading-relaxed">Permit information page with lead capture form.</p>
+                    <a href="https://balcony-design-permit-landing-gz7k.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-500 hover:text-gray-900 underline">
+                        View Live
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 6: Dr. Brent -->
+            <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="space-y-1">
+                    <div class="image-container">
+                        <img src="public/portfolio/dr-brent-call-tracking-desktop.webp" alt="Dr. Brent Call Tracking" onerror="this.parentElement.innerHTML='<div class=\'placeholder-primary w-full h-full flex items-center justify-center\'><span>LANDING PAGE</span></div>'">
+                    </div>
+                    <div class="image-container code-placeholder">
+                        <div class="code-header">
+                            <span class="code-dot code-dot-red"></span>
+                            <span class="code-dot code-dot-yellow"></span>
+                            <span class="code-dot code-dot-green"></span>
+                            <span class="code-filename">ga4.js</span>
+                        </div>
+                        <div class="code-linenums">
+                            <div class="code-linenum-col">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment">// GA4 event configuration</span><br>
+                                <span class="code-keyword">const</span> <span class="code-var">trackCallClick</span> = (number, source = <span class="code-string">'unknown'</span>) => {<br>
+                                &nbsp;&nbsp;<span class="code-keyword">const</span> <span class="code-var">eventData</span> = {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'event_category'</span>: <span class="code-string">'engagement'</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'event_label'</span>: <span class="code-string">'phone_number'</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'value'</span>: <span class="code-number">1</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'phone_number'</span>: number,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'source'</span>: source<br>
+                                &nbsp;&nbsp;};<br>
+                                &nbsp;&nbsp;<span class="code-function">gtag</span>(<span class="code-string">'event'</span>, <span class="code-string">'call_click'</span>, eventData);<br>
+                                &nbsp;&nbsp;<span class="code-function">dataLayer</span>.<span class="code-function">push</span>({<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;event: <span class="code-string">'phone_interaction'</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;...eventData<br>
+                                &nbsp;&nbsp;});<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-1.5">Dr. Brent – Call Tracking</h3>
+                    <p class="text-xs text-gray-600 mb-3 leading-relaxed">Medical practice page with call tracking and lead capture.</p>
+                    <a href="https://drbrent-call-sb.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-500 hover:text-gray-900 underline">
+                        View Live
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 7: Encino Dental -->
+            <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="space-y-1">
+                    <div class="image-container">
+                        <img src="public/portfolio/encino-dental-emergency-desktop.webp" alt="Encino Dental Emergency" onerror="this.parentElement.innerHTML='<div class=\'placeholder-primary w-full h-full flex items-center justify-center\'><span>LANDING PAGE</span></div>'">
+                    </div>
+                    <div class="image-container code-placeholder">
+                        <div class="code-header">
+                            <span class="code-dot code-dot-red"></span>
+                            <span class="code-dot code-dot-yellow"></span>
+                            <span class="code-dot code-dot-green"></span>
+                            <span class="code-filename">optimize.js</span>
+                        </div>
+                        <div class="code-linenums">
+                            <div class="code-linenum-col">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment">// Performance optimization</span><br>
+                                <span class="code-keyword">const</span> <span class="code-var">config</span> = {<br>
+                                &nbsp;&nbsp;lazyLoad: <span class="code-keyword">true</span>,<br>
+                                &nbsp;&nbsp;imageFormat: <span class="code-string">'webp'</span>,<br>
+                                &nbsp;&nbsp;minifyCSS: <span class="code-keyword">true</span>,<br>
+                                &nbsp;&nbsp;preloadCritical: <span class="code-keyword">true</span>,<br>
+                                &nbsp;&nbsp;compressJS: <span class="code-keyword">true</span>,<br>
+                                &nbsp;&nbsp;cacheStrategy: <span class="code-string">'aggressive'</span><br>
+                                };<br>
+                                <span class="code-keyword">const</span> <span class="code-var">optimizer</span> = <span class="code-keyword">new</span> <span class="code-function">PageOptimizer</span>(config);<br>
+                                <span class="code-function">optimizer</span>.<span class="code-function">init</span>();<br>
+                                <span class="code-function">optimizer</span>.<span class="code-function">optimizeImages</span>();
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-1.5">Encino Dental Emergency</h3>
+                    <p class="text-xs text-gray-600 mb-3 leading-relaxed">Emergency dental landing page optimized for phone conversions.</p>
+                    <a href="https://encino-dental-emer-lp-5lrs.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-500 hover:text-gray-900 underline">
+                        View Live
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 8: Monarch Landscape -->
+            <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="space-y-1">
+                    <div class="image-container">
+                        <img src="public/portfolio/monarch-landscape-desktop.webp" alt="Monarch Landscape" onerror="this.parentElement.innerHTML='<div class=\'placeholder-primary w-full h-full flex items-center justify-center\'><span>LANDING PAGE</span></div>'">
+                    </div>
+                    <div class="image-container code-placeholder">
+                        <div class="code-header">
+                            <span class="code-dot code-dot-red"></span>
+                            <span class="code-dot code-dot-yellow"></span>
+                            <span class="code-dot code-dot-green"></span>
+                            <span class="code-filename">schema.py</span>
+                        </div>
+                        <div class="code-linenums">
+                            <div class="code-linenum-col">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment"># Local SEO schema markup</span><br>
+                                <span class="code-keyword">import</span> json<br>
+                                <span class="code-keyword">from</span> seo <span class="code-keyword">import</span> SchemaBuilder<br>
+                                <span class="code-keyword">from</span> typing <span class="code-keyword">import</span> Dict<br><br>
+                                <span class="code-keyword">def</span> <span class="code-function">generate_schema</span>(business: Dict) -> str:<br>
+                                &nbsp;&nbsp;builder = <span class="code-function">SchemaBuilder</span>()<br>
+                                &nbsp;&nbsp;schema = {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"@type"</span>: <span class="code-string">"LocalBusiness"</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"name"</span>: business.name,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"address"</span>: {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"addressLocality"</span>: business.city,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"postalCode"</span>: business.zip<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-function">json</span>.<span class="code-function">dumps</span>(schema, indent=<span class="code-number">2</span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-1.5">Monarch Landscape</h3>
+                    <p class="text-xs text-gray-600 mb-3 leading-relaxed">Landscaping business landing page with local SEO optimization.</p>
+                    <a href="https://monarch-landscape-lp.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-500 hover:text-gray-900 underline">
+                        View Live
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 9: DrumSep GUI -->
+            <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="space-y-1">
+                    <div class="image-container">
+                        <img src="/portfolio/dj-gui-desktop.webp" alt="DrumSep GUI" onerror="this.parentElement.innerHTML='<div class=\'placeholder-primary w-full h-full flex items-center justify-center\'><span>DESKTOP APP</span></div>'">
+                    </div>
+                    <div class="image-container code-placeholder">
+                        <div class="code-header">
+                            <span class="code-dot code-dot-red"></span>
+                            <span class="code-dot code-dot-yellow"></span>
+                            <span class="code-dot code-dot-green"></span>
+                            <span class="code-filename">drumsep.py</span>
+                        </div>
+                        <div class="code-linenums">
+                            <div class="code-linenum-col">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment"># Audio processing pipeline</span><br>
+                                <span class="code-keyword">import</span> torch, librosa<br>
+                                <span class="code-keyword">from</span> drumsep <span class="code-keyword">import</span> Model<br>
+                                <span class="code-keyword">from</span> pathlib <span class="code-keyword">import</span> Path<br><br>
+                                <span class="code-keyword">def</span> <span class="code-function">separate_stems</span>(audio_file: str, output_dir: str):<br>
+                                &nbsp;&nbsp;model = <span class="code-function">Model</span>.<span class="code-function">load</span>(<span class="code-string">'drumsep'</span>)<br>
+                                &nbsp;&nbsp;audio, sr = <span class="code-function">librosa</span>.<span class="code-function">load</span>(audio_file, sr=<span class="code-number">44100</span>)<br>
+                                &nbsp;&nbsp;stems = model.<span class="code-function">separate</span>(audio, sr)<br>
+                                &nbsp;&nbsp;output_path = <span class="code-function">Path</span>(output_dir)<br>
+                                &nbsp;&nbsp;<span class="code-function">save_stems</span>(stems[<span class="code-string">'drums'</span>], output_path)<br>
+                                &nbsp;&nbsp;<span class="code-keyword">return</span> stems
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-1.5">DrumSep GUI</h3>
+                    <p class="text-xs text-gray-600 mb-3 leading-relaxed">Windows desktop application for separating drum stems from audio files.</p>
+                    <a href="https://github.com/shoutgeorge1/dj-gui" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-500 hover:text-gray-900 underline">
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
